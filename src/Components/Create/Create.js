@@ -35,7 +35,7 @@ const Create = () => {
       <Header />
       <card>
         <div className="centerDiv">
-          <form>
+          {/* <form> */}
             <label htmlFor="fname">Name</label>
             <br />
             <input
@@ -70,7 +70,7 @@ const Create = () => {
               
               onChange={(e)=>{setPrice(e.target.value)}}/>
             <br />
-          </form>
+          {/* </form> */}
           <br />
           <img
             alt="Posts"
@@ -78,7 +78,7 @@ const Create = () => {
             height="200px"
             src={image ? URL.createObjectURL(image) : ""}
           ></img>
-          <form>
+          {/* <form> */}
             <br />
             <input
               onChange={(e) => {
@@ -90,7 +90,7 @@ const Create = () => {
             <button onClick={handleSubmit} className="uploadBtn">
               upload and Submit
             </button>
-          </form>
+          {/* </form> */}
         </div>
       </card>
     </Fragment>

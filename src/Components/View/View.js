@@ -3,6 +3,7 @@ import './View.css';
 import { PostContext } from '../../store/PostContext';
 import { FirebaseContext } from '../../store/Context';
 
+
 function View() {
   const [userDetails, setUserDetails] = useState()
   const {postDetails} = useContext(PostContext)
@@ -16,14 +17,16 @@ function View() {
     })
   },[])
 
+ 
+
   return (
     <div className="viewParentDiv">
+      
       <div className="imageShowDiv">
-        <img
-          src={postDetails.url}
-          alt=""
-        />
+      <img  src={postDetails.url}  alt="" /> 
+        
       </div>
+      
       <div className="rightSection">
         <div className="productDetails">
           <p>&#x20B9; {postDetails.price} </p>

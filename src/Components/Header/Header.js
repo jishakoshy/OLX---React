@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
-import { useHistory } from 'react-router-dom';
-
+import {Link, useHistory } from 'react-router-dom';
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
 import Search from '../../assets/Search';
@@ -50,7 +49,9 @@ function Header() {
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            {/* <span>SELL</span> */}
+            <Link to = "/create">SELL</Link>
+
           </div>
         </div>
       </div>

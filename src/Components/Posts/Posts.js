@@ -3,9 +3,11 @@ import Heart from '../../assets/Heart';
 import './Post.css';
 import { FirebaseContext } from '../../store/Context';
 import { PostContext } from '../../store/PostContext';
-import { useHistory } from 'react-router-dom';
+import {Link, useHistory } from 'react-router-dom';
+
 
 function Posts() {
+  const [showFullView, setShowFullView] = useState(false);
   const {firebase} = useContext(FirebaseContext)
   const [products,setProducts] = useState([])
   const {setPostDetails} = useContext(PostContext)
@@ -21,6 +23,11 @@ function Posts() {
       setProducts(allPost)
     })
   }, [])
+
+  const handleImageClick = () => {
+    setShowFullView(true);
+  };
+
   return (
     <div className="postParentDiv">
       <div className="moreView">
@@ -40,9 +47,11 @@ function Posts() {
             <div className="favorite">
               <Heart></Heart>
             </div>
+            <Link to="/view" onClick={handleImageClick}>
             <div className="image">
               <img src={product.url} alt="" />
             </div>
+            </Link>
             <div className="content">
               <p className="rate">&#x20B9; {product.price}</p>
               <span className="kilometer">{product.category}</span>
